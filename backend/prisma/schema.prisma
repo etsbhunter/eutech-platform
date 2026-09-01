@@ -1,0 +1,484 @@
+// Eutech commercial data model.
+//
+// Scope boundary: this schema stores ONLY Eutech commercial data (accounts,
+// organizations, subscriptions, entitlements, onboarding, provisioning
+// references, support tickets). It must never gain patient, visit,
+// consultation, prescription, medicine or inventory tables — those remain
+// exclusively inside clinic-platform. Eutech only ever holds an opaque
+// workspaceId/accessUrl reference to a clinic-platform tenant.
+//
+// Only DemoRequest is wired to a live API endpoint in Phase 1. Everything
+// else here is the agreed target shape for Phases 2-5 and is not yet backed
+// by business logic.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Phase 1: demo / contact leads
+// ---------------------------------------------------------------------------
+
+enum PreferredContactMethod {
+  EMAIL
+  PHONE
+}
+
+model DemoRequest {
+  id                     String                 @id @default(uuid())
+  fullName               String
+  businessEmail          String
+  phone                  String
+  companyName            String
+  productSlug            String?
+  branchCount            Int?
+  preferredContactMethod PreferredContactMethod
+  message                String?
+  consentAt              DateTime
+  utmSource              String?
+  utmMedium              String?
+  utmCampaign            String?
+  createdAt              DateTime               @default(now())
+
+  @@index([businessEmail])
+  @@index([createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Phase 2: accounts and organizations
+// ---------------------------------------------------------------------------
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String
+  fullName      String
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  memberships   OrganizationMembership[]
+  auditLogs     AuditLog[]
+  supportComments SupportTicketComment[]
+  refreshTokens RefreshToken[]
+  emailVerificationTokens EmailVerificationToken[]
+  passwordResetTokens PasswordResetToken[]
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  country   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memberships     OrganizationMembership[]
+  productProfiles ProductProfile[]
+  billingCustomer BillingCustomer?
+  subscriptions   Subscription[]
+  entitlements    Entitlement[]
+  productInstances ProductInstance[]
+  supportTickets  SupportTicket[]
+  auditLogs       AuditLog[]
+}
+
+enum OrganizationRole {
+  ORGANIZATION_OWNER
+  BILLING_ADMIN
+  PRODUCT_ADMIN
+  EUTECH_INTERNAL_ADMIN
+}
+
+model OrganizationMembership {
+  id             String           @id @default(uuid())
+  userId         String
+  organizationId String
+  role           OrganizationRole
+  createdAt      DateTime         @default(now())
+
+  user         User         @relation(fields: [userId], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([userId, organizationId])
+  @@index([organizationId])
+}
+
+// A refresh token is never stored in plaintext: tokenHash is a SHA-256 digest
+// of the opaque secret held only in the client's HttpOnly cookie. Rotated on
+// every use; revoked (revokedAt set) on logout or reuse detection.
+model RefreshToken {
+  id         String    @id @default(uuid())
+  userId     String
+  tokenHash  String    @unique
+  expiresAt  DateTime
+  revokedAt  DateTime?
+  replacedByTokenId String?
+  createdAt  DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model EmailVerificationToken {
+  id        String    @id @default(uuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model PasswordResetToken {
+  id        String    @id @default(uuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// Phase 3: catalogue, pricing, subscriptions, entitlements
+// ---------------------------------------------------------------------------
+
+model Product {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  name      String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  plans           Plan[]
+  features        Feature[]
+  productInstances ProductInstance[]
+  productProfiles ProductProfile[]
+  supportTickets  SupportTicket[]
+}
+
+enum BillingInterval {
+  MONTHLY
+  ANNUAL
+}
+
+model Plan {
+  id        String   @id @default(uuid())
+  productId String
+  slug      String
+  name      String
+  isActive  Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  product      Product        @relation(fields: [productId], references: [id])
+  prices       Price[]
+  planFeatures PlanFeature[]
+  subscriptions Subscription[]
+
+  @@unique([productId, slug])
+}
+
+model Price {
+  id                 String          @id @default(uuid())
+  planId             String
+  interval           BillingInterval
+  // Money as integer minor units + ISO currency code. Never floating point.
+  amountMinorUnits   Int
+  currency           String          @default("USD")
+  isPlaceholder       Boolean         @default(true)
+  providerPriceId    String?
+  createdAt          DateTime        @default(now())
+
+  plan          Plan           @relation(fields: [planId], references: [id])
+  subscriptions Subscription[]
+
+  @@unique([planId, interval])
+}
+
+model Feature {
+  id        String  @id @default(uuid())
+  productId String
+  slug      String
+  name      String
+
+  product      Product       @relation(fields: [productId], references: [id])
+  planFeatures PlanFeature[]
+
+  @@unique([productId, slug])
+}
+
+model PlanFeature {
+  id        String  @id @default(uuid())
+  planId    String
+  featureId String
+  value     String?
+
+  plan    Plan    @relation(fields: [planId], references: [id])
+  feature Feature @relation(fields: [featureId], references: [id])
+
+  @@unique([planId, featureId])
+}
+
+enum SubscriptionStatus {
+  TRIALING
+  INCOMPLETE
+  ACTIVE
+  PAST_DUE
+  GRACE_PERIOD
+  PAUSED
+  CANCELING
+  CANCELED
+  EXPIRED
+}
+
+model Subscription {
+  id                     String             @id @default(uuid())
+  organizationId         String
+  planId                 String
+  priceId                String
+  status                 SubscriptionStatus
+  providerSubscriptionId String?            @unique
+  currentPeriodEnd       DateTime?
+  cancelAtPeriodEnd      Boolean            @default(false)
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+
+  organization Organization  @relation(fields: [organizationId], references: [id])
+  plan         Plan          @relation(fields: [planId], references: [id])
+  price        Price         @relation(fields: [priceId], references: [id])
+  entitlements Entitlement[]
+
+  @@index([organizationId])
+}
+
+model Entitlement {
+  id             String    @id @default(uuid())
+  organizationId String
+  subscriptionId String?
+  grantedByUserId String?
+  reason         String?
+  isManualOverride Boolean @default(false)
+  expiresAt      DateTime?
+  createdAt      DateTime  @default(now())
+
+  organization Organization  @relation(fields: [organizationId], references: [id])
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id])
+
+  @@index([organizationId])
+}
+
+model BillingCustomer {
+  id                 String   @id @default(uuid())
+  organizationId     String   @unique
+  provider           String
+  providerCustomerId String
+  createdAt          DateTime @default(now())
+
+  organization Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([provider, providerCustomerId])
+}
+
+model Invoice {
+  id               String   @id @default(uuid())
+  organizationId   String
+  providerInvoiceId String  @unique
+  amountMinorUnits Int
+  currency         String
+  status           String
+  issuedAt         DateTime
+  createdAt        DateTime @default(now())
+
+  @@index([organizationId])
+}
+
+model WebhookEvent {
+  id                String   @id @default(uuid())
+  provider          String
+  providerEventId   String
+  eventType         String
+  processingStatus  String   @default("pending")
+  failureReason     String?
+  receivedAt        DateTime @default(now())
+  processedAt       DateTime?
+
+  @@unique([provider, providerEventId])
+}
+
+// ---------------------------------------------------------------------------
+// Phase 4: clinic onboarding and provisioning
+// ---------------------------------------------------------------------------
+
+model ProductProfile {
+  id             String   @id @default(uuid())
+  organizationId String
+  productId      String
+  data           Json     @default("{}")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organization Organization @relation(fields: [organizationId], references: [id])
+  product      Product      @relation(fields: [productId], references: [id])
+
+  @@unique([organizationId, productId])
+}
+
+enum ProvisioningStatus {
+  NOT_STARTED
+  QUEUED
+  PROVISIONING
+  READY
+  FAILED
+  SUSPENDED
+}
+
+model ProductInstance {
+  id                       String             @id @default(uuid())
+  organizationId           String
+  productId                String
+  provisioningStatus       ProvisioningStatus @default(NOT_STARTED)
+  // The idempotency key sent to clinic-platform's provisioning API.
+  provisioningRequestId    String             @unique @default(uuid())
+  workspaceId              String?
+  accessUrl                String?
+  failureReason            String?
+  createdAt                DateTime           @default(now())
+  updatedAt                DateTime           @updatedAt
+
+  organization Organization @relation(fields: [organizationId], references: [id])
+  product      Product      @relation(fields: [productId], references: [id])
+
+  @@unique([organizationId, productId])
+}
+
+// ---------------------------------------------------------------------------
+// Support tickets
+// ---------------------------------------------------------------------------
+
+enum TicketStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  MORE_INFO_REQUIRED
+  CONFIRMED
+  IN_PROGRESS
+  READY_FOR_VERIFICATION
+  RESOLVED
+  CLOSED
+  NOT_REPRODUCIBLE
+  DUPLICATE
+}
+
+enum BusinessImpact {
+  MINOR_INCONVENIENCE
+  PARTIALLY_BLOCKED
+  COMPLETELY_BLOCKED
+  POSSIBLE_DATA_PRIVACY_OR_SECURITY_ISSUE
+}
+
+model SupportTicket {
+  id                  String         @id @default(uuid())
+  publicReference     String         @unique
+  organizationId      String
+  productId           String
+  reporterUserId      String
+  status              TicketStatus   @default(SUBMITTED)
+  title               String
+  module              String?
+  description         String
+  stepsToReproduce    String?
+  expectedResult      String?
+  actualResult        String?
+  businessImpact      BusinessImpact
+  frequency           String?
+  environment         String?
+  internalSeverity    String?
+  internalPriority    String?
+  duplicateOfTicketId String?
+  submissionIdempotencyKey String @unique
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  organization Organization              @relation(fields: [organizationId], references: [id])
+  product      Product                   @relation(fields: [productId], references: [id])
+  attachments  SupportTicketAttachment[]
+  comments     SupportTicketComment[]
+  statusHistory SupportTicketStatusHistory[]
+
+  @@index([organizationId])
+}
+
+model SupportTicketAttachment {
+  id               String   @id @default(uuid())
+  ticketId         String
+  storageObjectKey String
+  originalFilename String
+  mimeType         String
+  sizeBytes        Int
+  createdAt        DateTime @default(now())
+
+  ticket SupportTicket @relation(fields: [ticketId], references: [id])
+
+  @@index([ticketId])
+}
+
+model SupportTicketComment {
+  id             String   @id @default(uuid())
+  ticketId       String
+  authorUserId   String
+  isInternalOnly Boolean  @default(false)
+  body           String
+  createdAt      DateTime @default(now())
+
+  ticket SupportTicket @relation(fields: [ticketId], references: [id])
+  author User          @relation(fields: [authorUserId], references: [id])
+
+  @@index([ticketId])
+}
+
+model SupportTicketStatusHistory {
+  id         String       @id @default(uuid())
+  ticketId   String
+  fromStatus TicketStatus?
+  toStatus   TicketStatus
+  actorUserId String?
+  reason     String?
+  createdAt  DateTime     @default(now())
+
+  ticket SupportTicket @relation(fields: [ticketId], references: [id])
+
+  @@index([ticketId])
+}
+
+// ---------------------------------------------------------------------------
+// Audit
+// ---------------------------------------------------------------------------
+
+model AuditLog {
+  id             String   @id @default(uuid())
+  organizationId String?
+  actorUserId    String?
+  action         String
+  targetType     String?
+  targetId       String?
+  metadata       Json?
+  createdAt      DateTime @default(now())
+
+  organization Organization? @relation(fields: [organizationId], references: [id])
+  actor        User?         @relation(fields: [actorUserId], references: [id])
+
+  @@index([organizationId])
+  @@index([action])
+}

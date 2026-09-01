@@ -1,0 +1,505 @@
+{
+  "Metadata": {
+    "titleSuffix": "Eutech",
+    "defaultDescription": "Eutech Clinic 是一款面向前台、医生、配药员和管理员的双语诊所管理平台。"
+  },
+  "Header": {
+    "products": "产品",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "login": "登录",
+    "getStarted": "立即开始",
+    "bookDemo": "预约演示",
+    "languageLabel": "语言",
+    "myAccount": "我的账户",
+    "logout": "退出登录",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "Footer": {
+    "tagline": "为复杂业务打造的实用 SaaS 产品。",
+    "product": "产品",
+    "company": "公司",
+    "legal": "法律信息",
+    "eutechClinic": "Eutech Clinic",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "terms": "服务条款",
+    "privacy": "隐私政策",
+    "subscriptionTerms": "订阅条款",
+    "rights": "© {year} Eutech. 保留所有权利。",
+    "allProducts": "全部产品"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Eutech",
+      "title": "为复杂业务打造的实用 SaaS 软件",
+      "subtitle": "Eutech 打造专注、按角色设计的产品,将复杂的日常运营转化为清晰、可靠的工作流程 —— 从诊所业务开始。",
+      "primaryCta": "浏览产品",
+      "secondaryCta": "了解 Eutech Clinic",
+      "visualAlt": "Eutech 产品界面预览"
+    },
+    "valueProps": {
+      "title": "围绕真实业务运营打造",
+      "items": [
+        {
+          "title": "更简单的运营方式",
+          "description": "减少分散的工具,让日常步骤更清晰。"
+        },
+        {
+          "title": "清晰的工作流程",
+          "description": "每个角色都能按正确顺序看到自己需要的内容。"
+        },
+        {
+          "title": "按角色设计的体验",
+          "description": "权限与界面都围绕实际使用者设计。"
+        },
+        {
+          "title": "可扩展的订阅访问",
+          "description": "方案可随组织规模增长,统一在一个账户中管理。"
+        },
+        {
+          "title": "可靠的支持服务",
+          "description": "每款 Eutech 产品都内置了官方支持渠道。"
+        }
+      ]
+    },
+    "cataloguePreview": {
+      "title": "我们的产品",
+      "subtitle": "Eutech Clinic 是我们的首款旗舰产品。",
+      "moreComing": "更多 Eutech 产品正在开发中。",
+      "cta": "查看产品"
+    },
+    "howWeBuild": {
+      "title": "Eutech 如何打造软件",
+      "items": [
+        {
+          "title": "易用性",
+          "description": "围绕真实日常任务设计界面,而非内部专业术语。"
+        },
+        {
+          "title": "模块化产品设计",
+          "description": "产品既能独立运行,也能彼此协同。"
+        },
+        {
+          "title": "运营清晰度",
+          "description": "每个工作流程都对应清晰易懂的步骤。"
+        },
+        {
+          "title": "注重安全的实现方式",
+          "description": "访问控制与数据归属被视为核心关切。"
+        },
+        {
+          "title": "持续改进",
+          "description": "产品基于真实使用情况持续优化。"
+        }
+      ]
+    },
+    "journey": {
+      "title": "从发现产品到日常使用的简单路径",
+      "steps": [
+        "发现产品",
+        "选择合适的方案",
+        "配置工作区",
+        "使用产品",
+        "通过 Eutech Account 管理订阅与支持"
+      ]
+    },
+    "flagship": {
+      "eyebrow": "旗舰产品",
+      "title": "Eutech Clinic",
+      "description": "一款双语诊所管理平台,将前台、医生、配药员和管理员整合到统一的患者记录中 —— 从签到到配药,一气呵成。",
+      "features": [
+        "登记、排队与问诊",
+        "处方、配药与库存",
+        "面向各诊所团队的角色权限"
+      ],
+      "cta": "了解 Eutech Clinic",
+      "pilotNotice": "试点诊所与用户反馈即将上线。"
+    },
+    "trust": {
+      "title": "围绕您的账户、订阅与数据构建",
+      "items": [
+        "一个 Eutech Account 即可管理组织的产品、方案与账单。",
+        "每款产品都配有官方支持渠道,协助入驻与后续支持。",
+        "产品数据归属清晰:Eutech 的商业系统不会成为您运营记录的第二份副本。"
+      ]
+    },
+    "finalCta": {
+      "title": "了解 Eutech 能为您的组织简化哪些环节",
+      "subtitle": "浏览我们的产品目录,或直接了解 Eutech Clinic。",
+      "primaryCta": "浏览产品",
+      "secondaryCta": "了解 Eutech Clinic"
+    }
+  },
+  "About": {
+    "title": "关于 Eutech",
+    "intro": "Eutech 是一家软件公司,专注于为医疗健康行业打造实用的运营软件。",
+    "philosophyTitle": "我们的理念",
+    "philosophy": "我们围绕诊所的真实日常运营来打造软件 —— 从登记、排队、问诊、配药到报表等基础运营环节入手,而不是急于添加诊所暂时用不到的功能。",
+    "focusTitle": "当前重点",
+    "focus": "Eutech 的第一款产品 Eutech Clinic 专注于诊所的日常运营。我们是一家从诊所运营起步的软件公司,而非一次性项目 —— 该平台的架构支持未来逐步扩展更多 Eutech 产品。"
+  },
+  "Products": {
+    "title": "产品",
+    "subtitle": "Eutech Clinic 是我们首款也是目前唯一在售的产品。",
+    "eutechClinic": {
+      "category": "诊所运营",
+      "name": "Eutech Clinic",
+      "summary": "一款覆盖登记、排队、问诊、处方、配药和库存管理的双语诊所管理平台。",
+      "availability": "现已上线",
+      "cta": "了解更多"
+    },
+    "moreComingTitle": "未来将推出更多产品",
+    "moreComingDescription": "更多 Eutech 产品正在开发中。该平台的架构支持未来推出更多产品。"
+  },
+  "Demo": {
+    "title": "预约演示",
+    "subtitle": "告诉我们您诊所的基本情况,我们会与您联系安排演示。",
+    "fields": {
+      "fullName": "姓名",
+      "businessEmail": "工作邮箱",
+      "phone": "电话号码",
+      "branchCount": "分院数量",
+      "preferredContactMethod": "偏好联系方式",
+      "email": "邮箱",
+      "phoneMethod": "电话",
+      "message": "留言",
+      "consent": "我同意 Eutech 就此请求与我联系。",
+      "companyName": "公司名称"
+    },
+    "submit": "提交预约请求",
+    "submitting": "发送中...",
+    "successTitle": "感谢您的提交,我们会尽快联系您",
+    "successBody": "您的请求已收到,我们的团队会通过您偏好的联系方式与您联系。",
+    "errorBody": "提交请求时出现问题,请重试。",
+    "validation": {
+      "required": "此字段为必填项。",
+      "email": "请输入有效的电子邮箱地址。",
+      "consent": "请确认您同意接受联系。"
+    }
+  },
+  "Contact": {
+    "title": "联系我们",
+    "subtitle": "对 Eutech Clinic 有疑问?给我们留言吧。",
+    "sameFormNotice": "此表单与预约演示共用 —— 如有具体问题,请在留言中说明。"
+  },
+  "Auth": {
+    "login": {
+      "title": "登录",
+      "subtitle": "欢迎回到 Eutech。",
+      "email": "邮箱",
+      "password": "密码",
+      "submit": "登录",
+      "submitting": "登录中...",
+      "forgotPassword": "忘记密码?",
+      "noAccount": "还没有账户?",
+      "registerLink": "注册",
+      "sessionExpired": "您的登录状态已过期,请重新登录。",
+      "invalidCredentials": "邮箱或密码不正确。",
+      "genericError": "出现问题,请重试。"
+    },
+    "register": {
+      "title": "创建您的 Eutech 账户",
+      "subtitle": "开始使用 Eutech Clinic。",
+      "fullName": "姓名",
+      "email": "工作邮箱",
+      "password": "密码",
+      "passwordHelp": "至少 8 个字符,需包含大写字母、小写字母、数字和符号。",
+      "submit": "创建账户",
+      "submitting": "创建中...",
+      "haveAccount": "已经有账户了?",
+      "loginLink": "登录",
+      "emailExists": "该邮箱已注册账户。",
+      "genericError": "出现问题,请重试。"
+    },
+    "forgotPassword": {
+      "title": "重置密码",
+      "subtitle": "输入您的邮箱,如账户存在我们会发送重置链接。",
+      "email": "邮箱",
+      "submit": "发送重置链接",
+      "submitting": "发送中...",
+      "successMessage": "如该邮箱对应的账户存在,重置链接已发送。",
+      "backToLogin": "返回登录"
+    },
+    "resetPassword": {
+      "title": "设置新密码",
+      "newPassword": "新密码",
+      "passwordHelp": "至少 8 个字符,需包含大写字母、小写字母、数字和符号。",
+      "submit": "重置密码",
+      "submitting": "重置中...",
+      "successMessage": "密码已重置,您现在可以登录了。",
+      "backToLogin": "前往登录",
+      "invalidToken": "该重置链接无效或已过期,请重新申请。",
+      "missingToken": "未提供重置令牌,请使用邮件中的链接。"
+    }
+  },
+  "Account": {
+    "title": "我的账户",
+    "welcome": "欢迎,{name}",
+    "loading": "正在加载您的账户...",
+    "noOrganization": {
+      "title": "设置您的组织",
+      "description": "创建您诊所的组织信息以开始使用 Eutech。",
+      "name": "组织名称",
+      "country": "国家/地区",
+      "submit": "创建组织",
+      "submitting": "创建中...",
+      "error": "创建组织时出现问题,请重试。"
+    },
+    "organization": {
+      "heading": "您的组织",
+      "role": "角色"
+    },
+    "subscription": {
+      "heading": "订阅",
+      "status": "状态",
+      "plan": "方案",
+      "noActiveSubscription": "您目前还没有有效的订阅。",
+      "viewPlans": "查看方案",
+      "manageBilling": "管理账单",
+      "openingPortal": "正在打开账单门户...",
+      "portalError": "无法打开账单门户,请重试。"
+    },
+    "workspace": {
+      "heading": "Eutech Clinic 工作区",
+      "notStarted": "请完成入驻设置以创建您的 Eutech Clinic 工作区。",
+      "startOnboarding": "开始入驻设置",
+      "provisioning": "正在为您创建 Eutech Clinic 工作区,通常需要几分钟时间。",
+      "ready": "您的工作区已就绪。",
+      "openWorkspace": "打开 Eutech Clinic",
+      "failed": "创建工作区时出现问题。",
+      "retry": "重试"
+    }
+  },
+  "Onboarding": {
+    "fields": {
+      "registeredName": "诊所注册名称",
+      "addressLine1": "地址第一行",
+      "addressLine2": "地址第二行",
+      "city": "城市",
+      "country": "国家/地区",
+      "branchCount": "分院数量",
+      "operatingHours": "营业时间",
+      "staffEstimate": "预计员工人数"
+    },
+    "save": "保存并继续",
+    "saving": "保存中...",
+    "saved": "诊所信息已保存。",
+    "requestProvisioning": "申请创建工作区",
+    "requesting": "申请中...",
+    "error": "保存诊所信息时出现问题,请重试。",
+    "backToAccount": "返回账户",
+    "products": {
+      "eutechClinic": {
+        "title": "设置您的诊所",
+        "subtitle": "请填写诊所信息,以便我们为您创建 Eutech Clinic 工作区。"
+      }
+    }
+  },
+  "FakeCheckout": {
+    "product": "产品",
+    "title": "模拟结账页面(仅限开发环境)",
+    "description": "这是真实 LemonSqueezy 结账页面的本地替代品,不会产生实际扣款。只有在此页面调用服务器后才会授予访问权限,而不是仅凭页面加载。",
+    "plan": "方案",
+    "interval": "计费周期",
+    "confirm": "模拟支付成功",
+    "confirming": "处理中...",
+    "success": "已模拟支付,正在跳转到您的账户...",
+    "error": "完成模拟结账时出现问题。"
+  },
+  "FakeBillingPortal": {
+    "title": "模拟账单门户(仅限开发环境)",
+    "description": "这是真实 LemonSqueezy 客户账单门户的本地替代品。"
+  },
+  "Admin": {
+    "navLabel": "管理后台",
+    "loading": "加载中...",
+    "accessDenied": "您没有访问 Eutech Admin 的权限。",
+    "dashboard": {
+      "title": "Eutech Admin",
+      "demoRequests": "演示请求",
+      "trialing": "试用中",
+      "active": "有效订阅",
+      "pastDue": "逾期未付",
+      "provisioningFailed": "开通失败"
+    },
+    "nav": {
+      "dashboard": "概览",
+      "organizations": "组织",
+      "demoRequests": "演示请求",
+      "auditLogs": "审计日志",
+      "webhookEvents": "Webhook 事件"
+    },
+    "organizations": {
+      "title": "组织",
+      "searchPlaceholder": "按名称或所有者邮箱搜索",
+      "name": "名称",
+      "owner": "所有者",
+      "subscription": "订阅",
+      "provisioning": "开通状态",
+      "view": "查看",
+      "prev": "上一页",
+      "next": "下一页"
+    },
+    "organizationDetail": {
+      "title": "组织详情",
+      "members": "成员",
+      "role": "角色",
+      "subscriptions": "订阅记录",
+      "entitlements": "权益记录",
+      "manualOverride": "人工授予",
+      "expires": "到期时间",
+      "neverExpires": "无到期时间",
+      "provisioningHeading": "开通状态",
+      "retryProvisioning": "重试开通",
+      "retrying": "重试中...",
+      "retrySuccess": "已提交重试请求。",
+      "retryError": "无法重试开通。",
+      "grantEntitlement": "人工授予权益",
+      "reason": "原因",
+      "expiresAt": "到期时间",
+      "grant": "授予",
+      "granting": "授予中...",
+      "grantSuccess": "权益已授予。",
+      "grantError": "无法授予权益,原因说明至少需要 10 个字符。",
+      "productProfile": "产品资料",
+      "noProductProfile": "尚未提交资料。",
+      "noFailedProvisioning": "没有开通失败的实例。"
+    },
+    "demoRequests": {
+      "title": "演示请求",
+      "searchPlaceholder": "按姓名、邮箱或诊所搜索",
+      "name": "姓名",
+      "email": "邮箱",
+      "submitted": "提交时间",
+      "company": "公司",
+      "product": "产品",
+      "generalInquiry": "一般咨询"
+    },
+    "auditLogs": {
+      "title": "审计日志",
+      "searchPlaceholder": "按操作搜索",
+      "action": "操作",
+      "actor": "操作人",
+      "target": "对象",
+      "when": "时间"
+    },
+    "webhookEvents": {
+      "title": "Webhook 事件",
+      "searchPlaceholder": "按提供商或事件类型搜索",
+      "provider": "提供商",
+      "eventType": "事件类型",
+      "status": "状态",
+      "received": "接收时间"
+    }
+  },
+  "Legal": {
+    "terms": {
+      "title": "服务条款",
+      "placeholder": "服务条款内容将在正式上线前发布于此页面。当前为占位页面。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "placeholder": "隐私政策内容将在正式上线前发布于此页面。当前为占位页面。"
+    },
+    "subscriptionTerms": {
+      "title": "订阅条款",
+      "placeholder": "订阅条款内容将在正式上线前发布于此页面。当前为占位页面。"
+    }
+  },
+  "ProductDetail": {
+    "eutechClinic": {
+      "title": "Eutech Clinic",
+      "subtitle": "一款覆盖患者就诊全流程的诊所管理系统,支持中英文双语。",
+      "sections": [
+        {
+          "title": "患者登记",
+          "description": "在前台快速登记新患者,并快速调取老患者信息。"
+        },
+        {
+          "title": "预约与排队管理",
+          "description": "在同一个排队视图中管理现场就诊和预约就诊患者。"
+        },
+        {
+          "title": "医生诊室分配与专属队列",
+          "description": "将患者分配至合适的诊室,医生按自己的队列顺序问诊。"
+        },
+        {
+          "title": "问诊工作流程",
+          "description": "在专为诊所就诊设计的结构化流程中记录问诊内容。"
+        },
+        {
+          "title": "处方开具",
+          "description": "医生可直接在患者就诊记录中开具处方。"
+        },
+        {
+          "title": "配药,支持部分配药",
+          "description": "配药员根据实时库存配药,必要时支持部分配药。"
+        },
+        {
+          "title": "药品库存管理",
+          "description": "追踪库存水平和批次信息,在短缺发生前及时发现问题。"
+        },
+        {
+          "title": "角色与权限管理",
+          "description": "根据前台、医生、配药员或管理员等不同角色分配相应权限。"
+        },
+        {
+          "title": "报表",
+          "description": "管理员可全面了解诊所的运营情况。"
+        },
+        {
+          "title": "患者端扫码查询排队状态",
+          "description": "患者通过手机扫描二维码即可查看自己的排队进度。"
+        },
+        {
+          "title": "中英文双语界面",
+          "description": "员工和患者均可选择使用英文或简体中文界面。"
+        },
+        {
+          "title": "入驻引导与支持",
+          "description": "新诊所在初始设置阶段会获得引导,上线后也可获得持续支持。"
+        }
+      ],
+      "cta": "预约演示",
+      "subscribeCta": "订阅"
+    }
+  },
+  "ProductPlans": {
+    "title": "方案与价格",
+    "subtitle": "选择适合您诊所规模的方案。当前显示价格为占位价格,最终价格待确认。",
+    "monthly": "按月",
+    "annual": "按年",
+    "annualNote": "按年计费,价格按月均摊显示。",
+    "placeholderNotice": "标记为占位的价格并非最终价格,上线前可能会有调整。",
+    "perMonth": "/月",
+    "contactSales": "联系销售",
+    "choosePlan": "选择方案",
+    "loading": "正在加载方案...",
+    "loadError": "暂时无法加载方案,请稍后重试。",
+    "startingCheckout": "正在跳转到结账页面...",
+    "checkoutError": "启动结账时出现问题,请重试。",
+    "needsOrganization": "请先设置您的组织,然后再订阅方案。",
+    "plans": {
+      "starter": {
+        "name": "入门版",
+        "description": "适合刚起步的单一分院诊所。"
+      },
+      "professional": {
+        "name": "专业版",
+        "description": "适合多分院、快速成长中的诊所。"
+      },
+      "enterprise": {
+        "name": "企业版",
+        "description": "适合有定制需求的大型诊所集团。"
+      }
+    },
+    "features": {
+      "branch_limit": "分院数量",
+      "staff_seat_limit": "员工席位",
+      "support_level": "支持级别",
+      "integrations": "集成能力"
+    }
+  }
+}

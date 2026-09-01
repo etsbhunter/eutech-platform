@@ -1,0 +1,505 @@
+{
+  "Metadata": {
+    "titleSuffix": "Eutech",
+    "defaultDescription": "Eutech Clinic is a bilingual clinic-management platform for reception, doctors, dispensers and administrators."
+  },
+  "Header": {
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Log in",
+    "getStarted": "Get Started",
+    "bookDemo": "Book a Demo",
+    "languageLabel": "Language",
+    "myAccount": "My Account",
+    "logout": "Log out",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "tagline": "Practical SaaS products for complex operations.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "eutechClinic": "Eutech Clinic",
+    "about": "About",
+    "contact": "Contact",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "subscriptionTerms": "Subscription Terms",
+    "rights": "© {year} Eutech. All rights reserved.",
+    "allProducts": "All products"
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Eutech",
+      "title": "Practical SaaS software for complex operations",
+      "subtitle": "Eutech builds focused, role-aware products that turn complicated day-to-day operations into clear, dependable workflows — starting with clinics.",
+      "primaryCta": "Explore Products",
+      "secondaryCta": "Discover Eutech Clinic",
+      "visualAlt": "Eutech product interface preview"
+    },
+    "valueProps": {
+      "title": "Built for how operations actually work",
+      "items": [
+        {
+          "title": "Simpler operations",
+          "description": "Fewer disconnected tools, clearer day-to-day steps."
+        },
+        {
+          "title": "Clear workflows",
+          "description": "Each role sees exactly what it needs, in the right order."
+        },
+        {
+          "title": "Role-aware experiences",
+          "description": "Permissions and views are built around who is using the product."
+        },
+        {
+          "title": "Scalable subscription access",
+          "description": "Plans that grow with your organization, managed from one account."
+        },
+        {
+          "title": "Dependable support",
+          "description": "A first-party support channel built into every Eutech product."
+        }
+      ]
+    },
+    "cataloguePreview": {
+      "title": "Our products",
+      "subtitle": "Eutech Clinic is our first flagship product.",
+      "moreComing": "More Eutech products are being developed.",
+      "cta": "View product"
+    },
+    "howWeBuild": {
+      "title": "How Eutech builds software",
+      "items": [
+        {
+          "title": "Usability",
+          "description": "Interfaces built around real daily tasks, not internal jargon."
+        },
+        {
+          "title": "Modular product design",
+          "description": "Products are built to stand alone and to fit together."
+        },
+        {
+          "title": "Operational clarity",
+          "description": "Every workflow maps to a clear, understandable step."
+        },
+        {
+          "title": "Security-conscious implementation",
+          "description": "Access control and data ownership are treated as first-class concerns."
+        },
+        {
+          "title": "Ongoing improvement",
+          "description": "Products are refined continuously based on real usage."
+        }
+      ]
+    },
+    "journey": {
+      "title": "A simple path from discovery to daily use",
+      "steps": [
+        "Discover a product",
+        "Choose a suitable plan",
+        "Configure the workspace",
+        "Use the product",
+        "Manage your subscription and support through Eutech Account"
+      ]
+    },
+    "flagship": {
+      "eyebrow": "Flagship product",
+      "title": "Eutech Clinic",
+      "description": "A bilingual clinic-management platform that connects reception, doctors, dispensers and administrators around one patient record — from check-in to dispensing.",
+      "features": [
+        "Registration, queueing and consultations",
+        "Prescriptions, dispensing and inventory",
+        "Role-based access for every clinic team"
+      ],
+      "cta": "Explore Eutech Clinic",
+      "pilotNotice": "Pilot clinics and feedback coming soon."
+    },
+    "trust": {
+      "title": "Built around your account, your subscription and your data",
+      "items": [
+        "One Eutech Account manages your organization's products, plans and billing.",
+        "Onboarding and support are handled through a first-party support channel for every product you use.",
+        "Product data ownership is kept clear: Eutech's commercial systems never become a second copy of your operational records."
+      ]
+    },
+    "finalCta": {
+      "title": "See what Eutech can simplify for your organization",
+      "subtitle": "Explore our product catalogue or go straight to Eutech Clinic.",
+      "primaryCta": "Explore Products",
+      "secondaryCta": "View Eutech Clinic"
+    }
+  },
+  "About": {
+    "title": "About Eutech",
+    "intro": "Eutech is a software company building practical, operational software for healthcare businesses.",
+    "philosophyTitle": "Our approach",
+    "philosophy": "We build software around how clinics actually operate day to day, starting with the operational basics — registration, queueing, consultation, dispensing and reporting — rather than adding features clinics don't need yet.",
+    "focusTitle": "Current focus",
+    "focus": "Eutech's first product, Eutech Clinic, focuses on day-to-day clinic operations. We are a software company beginning with clinic operations, not a one-off project — the platform is built to support additional Eutech products over time."
+  },
+  "Products": {
+    "title": "Products",
+    "subtitle": "Eutech Clinic is our first and current product.",
+    "eutechClinic": {
+      "category": "Clinic operations",
+      "name": "Eutech Clinic",
+      "summary": "A bilingual clinic-management platform covering registration, queueing, consultations, prescriptions, dispensing and inventory.",
+      "availability": "Available now",
+      "cta": "Learn more"
+    },
+    "moreComingTitle": "More products over time",
+    "moreComingDescription": "More Eutech products are being developed. The platform is built to support additional products in the future."
+  },
+  "Demo": {
+    "title": "Book a Demo",
+    "subtitle": "Tell us about your clinic and we'll get in touch to schedule a walkthrough.",
+    "fields": {
+      "fullName": "Full name",
+      "businessEmail": "Business email",
+      "phone": "Phone number",
+      "branchCount": "Number of branches",
+      "preferredContactMethod": "Preferred contact method",
+      "email": "Email",
+      "phoneMethod": "Phone",
+      "message": "Message",
+      "consent": "I agree to be contacted by Eutech about this request.",
+      "companyName": "Company name"
+    },
+    "submit": "Request Demo",
+    "submitting": "Sending...",
+    "successTitle": "Thanks — we'll be in touch",
+    "successBody": "Your request has been received. Our team will reach out using your preferred contact method.",
+    "errorBody": "Something went wrong sending your request. Please try again.",
+    "validation": {
+      "required": "This field is required.",
+      "email": "Enter a valid email address.",
+      "consent": "Please confirm you agree to be contacted."
+    }
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Have a question about Eutech Clinic? Send us a message.",
+    "sameFormNotice": "This uses the same form as booking a demo — let us know in your message if you have a specific question."
+  },
+  "Auth": {
+    "login": {
+      "title": "Log in",
+      "subtitle": "Welcome back to Eutech.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in",
+      "submitting": "Logging in...",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Register",
+      "sessionExpired": "Your session has expired. Please log in again.",
+      "invalidCredentials": "Invalid email or password.",
+      "genericError": "Something went wrong. Please try again."
+    },
+    "register": {
+      "title": "Create your Eutech account",
+      "subtitle": "Get started with Eutech Clinic.",
+      "fullName": "Full name",
+      "email": "Business email",
+      "password": "Password",
+      "passwordHelp": "At least 8 characters, with an uppercase letter, a lowercase letter, a number and a symbol.",
+      "submit": "Create account",
+      "submitting": "Creating account...",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "emailExists": "An account with this email already exists.",
+      "genericError": "Something went wrong. Please try again."
+    },
+    "forgotPassword": {
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send you a reset link if an account exists.",
+      "email": "Email",
+      "submit": "Send reset link",
+      "submitting": "Sending...",
+      "successMessage": "If an account exists for this email, a reset link has been sent.",
+      "backToLogin": "Back to login"
+    },
+    "resetPassword": {
+      "title": "Set a new password",
+      "newPassword": "New password",
+      "passwordHelp": "At least 8 characters, with an uppercase letter, a lowercase letter, a number and a symbol.",
+      "submit": "Reset password",
+      "submitting": "Resetting...",
+      "successMessage": "Your password has been reset. You can now log in.",
+      "backToLogin": "Go to login",
+      "invalidToken": "This reset link is invalid or has expired. Please request a new one.",
+      "missingToken": "No reset token was provided. Please use the link from your email."
+    }
+  },
+  "Account": {
+    "title": "My Account",
+    "welcome": "Welcome, {name}",
+    "loading": "Loading your account...",
+    "noOrganization": {
+      "title": "Set up your organization",
+      "description": "Create your clinic's organization to get started with Eutech.",
+      "name": "Organization name",
+      "country": "Country",
+      "submit": "Create organization",
+      "submitting": "Creating...",
+      "error": "Something went wrong creating your organization. Please try again."
+    },
+    "organization": {
+      "heading": "Your organization",
+      "role": "Role"
+    },
+    "subscription": {
+      "heading": "Subscription",
+      "status": "Status",
+      "plan": "Plan",
+      "noActiveSubscription": "You don't have an active subscription yet.",
+      "viewPlans": "View plans",
+      "manageBilling": "Manage billing",
+      "openingPortal": "Opening billing portal...",
+      "portalError": "Could not open the billing portal. Please try again."
+    },
+    "workspace": {
+      "heading": "Eutech Clinic workspace",
+      "notStarted": "Complete onboarding to set up your Eutech Clinic workspace.",
+      "startOnboarding": "Start onboarding",
+      "provisioning": "Setting up your Eutech Clinic workspace. This usually takes a few minutes.",
+      "ready": "Your workspace is ready.",
+      "openWorkspace": "Open Eutech Clinic",
+      "failed": "Something went wrong setting up your workspace.",
+      "retry": "Retry"
+    }
+  },
+  "Onboarding": {
+    "fields": {
+      "registeredName": "Registered clinic name",
+      "addressLine1": "Address line 1",
+      "addressLine2": "Address line 2",
+      "city": "City",
+      "country": "Country",
+      "branchCount": "Number of branches",
+      "operatingHours": "Operating hours",
+      "staffEstimate": "Estimated staff count"
+    },
+    "save": "Save and continue",
+    "saving": "Saving...",
+    "saved": "Clinic profile saved.",
+    "requestProvisioning": "Request workspace provisioning",
+    "requesting": "Requesting...",
+    "error": "Something went wrong saving your clinic profile. Please try again.",
+    "backToAccount": "Back to account",
+    "products": {
+      "eutechClinic": {
+        "title": "Set up your clinic",
+        "subtitle": "Tell us about your clinic so we can provision your Eutech Clinic workspace."
+      }
+    }
+  },
+  "FakeCheckout": {
+    "product": "Product",
+    "title": "Simulated Checkout (Development Only)",
+    "description": "This is a local stand-in for a real LemonSqueezy checkout page. No payment is processed, and access is only granted after this page calls the server -- never from this page loading by itself.",
+    "plan": "Plan",
+    "interval": "Billing interval",
+    "confirm": "Simulate successful payment",
+    "confirming": "Processing...",
+    "success": "Payment simulated. Redirecting to your account...",
+    "error": "Something went wrong completing the simulated checkout."
+  },
+  "FakeBillingPortal": {
+    "title": "Simulated Billing Portal (Development Only)",
+    "description": "This is a local stand-in for the real LemonSqueezy customer billing portal."
+  },
+  "Admin": {
+    "navLabel": "Admin",
+    "loading": "Loading...",
+    "accessDenied": "You don't have access to Eutech Admin.",
+    "dashboard": {
+      "title": "Eutech Admin",
+      "demoRequests": "Demo requests",
+      "trialing": "Trialing",
+      "active": "Active subscriptions",
+      "pastDue": "Past due",
+      "provisioningFailed": "Provisioning failed"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "organizations": "Organizations",
+      "demoRequests": "Demo requests",
+      "auditLogs": "Audit log",
+      "webhookEvents": "Webhook events"
+    },
+    "organizations": {
+      "title": "Organizations",
+      "searchPlaceholder": "Search by name or owner email",
+      "name": "Name",
+      "owner": "Owner",
+      "subscription": "Subscription",
+      "provisioning": "Provisioning",
+      "view": "View",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "organizationDetail": {
+      "title": "Organization",
+      "members": "Members",
+      "role": "Role",
+      "subscriptions": "Subscriptions",
+      "entitlements": "Entitlements",
+      "manualOverride": "Manual override",
+      "expires": "Expires",
+      "neverExpires": "No expiry",
+      "provisioningHeading": "Provisioning",
+      "retryProvisioning": "Retry provisioning",
+      "retrying": "Retrying...",
+      "retrySuccess": "Retry requested.",
+      "retryError": "Could not retry provisioning.",
+      "grantEntitlement": "Grant manual entitlement",
+      "reason": "Reason",
+      "expiresAt": "Expires at",
+      "grant": "Grant",
+      "granting": "Granting...",
+      "grantSuccess": "Entitlement granted.",
+      "grantError": "Could not grant entitlement. Reason must be at least 10 characters.",
+      "productProfile": "Product profile",
+      "noProductProfile": "No profile submitted yet.",
+      "noFailedProvisioning": "No failed provisioning instances."
+    },
+    "demoRequests": {
+      "title": "Demo requests",
+      "searchPlaceholder": "Search by name, email or clinic",
+      "name": "Name",
+      "email": "Email",
+      "submitted": "Submitted",
+      "company": "Company",
+      "product": "Product",
+      "generalInquiry": "General inquiry"
+    },
+    "auditLogs": {
+      "title": "Audit log",
+      "searchPlaceholder": "Search by action",
+      "action": "Action",
+      "actor": "Actor",
+      "target": "Target",
+      "when": "When"
+    },
+    "webhookEvents": {
+      "title": "Webhook events",
+      "searchPlaceholder": "Search by provider or event type",
+      "provider": "Provider",
+      "eventType": "Event type",
+      "status": "Status",
+      "received": "Received"
+    }
+  },
+  "Legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "placeholder": "Terms of Service content will be published here before general availability. This is a placeholder page."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "placeholder": "Privacy Policy content will be published here before general availability. This is a placeholder page."
+    },
+    "subscriptionTerms": {
+      "title": "Subscription Terms",
+      "placeholder": "Subscription Terms content will be published here before general availability. This is a placeholder page."
+    }
+  },
+  "ProductDetail": {
+    "eutechClinic": {
+      "title": "Eutech Clinic",
+      "subtitle": "Everything a clinic needs to manage a patient visit, in English and Simplified Chinese.",
+      "sections": [
+        {
+          "title": "Patient registration",
+          "description": "Register new patients and retrieve returning patients quickly at reception."
+        },
+        {
+          "title": "Appointments and queue management",
+          "description": "Manage walk-ins and scheduled appointments in a single queue view."
+        },
+        {
+          "title": "Doctor-room assignment and assigned queues",
+          "description": "Route patients to the right doctor room and let doctors work through their own queue."
+        },
+        {
+          "title": "Consultation workflow",
+          "description": "Capture consultation notes in a structured workflow designed for clinic visits."
+        },
+        {
+          "title": "Prescriptions",
+          "description": "Doctors write prescriptions directly into the patient's visit record."
+        },
+        {
+          "title": "Dispensing, including partial dispensing",
+          "description": "Dispensers fill prescriptions against live stock, including partial dispensing when needed."
+        },
+        {
+          "title": "Medicine inventory",
+          "description": "Track stock levels and batches so shortages are visible before they become a problem."
+        },
+        {
+          "title": "Roles and permissions",
+          "description": "Give staff access appropriate to their role — reception, doctor, dispenser or administrator."
+        },
+        {
+          "title": "Reporting",
+          "description": "Administrators get visibility into clinic activity and operations."
+        },
+        {
+          "title": "Patient-facing QR queue status",
+          "description": "Patients check their place in line from their own phone using a QR code."
+        },
+        {
+          "title": "English/Chinese interface",
+          "description": "Staff and patients can use the interface in English or Simplified Chinese."
+        },
+        {
+          "title": "Onboarding and support",
+          "description": "New clinics are guided through setup, with support available once you're live."
+        }
+      ],
+      "cta": "Book a Demo",
+      "subscribeCta": "Subscribe"
+    }
+  },
+  "ProductPlans": {
+    "title": "Plans and pricing",
+    "subtitle": "Choose a plan that fits your clinic's size. Prices shown are placeholders pending final confirmation.",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualNote": "Annual pricing shown per month, billed yearly.",
+    "placeholderNotice": "Prices marked as placeholders are not final and may change before launch.",
+    "perMonth": "/month",
+    "contactSales": "Contact Sales",
+    "choosePlan": "Choose plan",
+    "loading": "Loading plans...",
+    "loadError": "Could not load plans right now. Please try again shortly.",
+    "startingCheckout": "Starting checkout...",
+    "checkoutError": "Something went wrong starting checkout. Please try again.",
+    "needsOrganization": "Set up your organization first to subscribe to a plan.",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "For a single clinic branch getting started."
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "For growing clinics with multiple branches."
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For larger clinic groups with custom needs."
+      }
+    },
+    "features": {
+      "branch_limit": "Branches",
+      "staff_seat_limit": "Staff seats",
+      "support_level": "Support level",
+      "integrations": "Integrations"
+    }
+  }
+}

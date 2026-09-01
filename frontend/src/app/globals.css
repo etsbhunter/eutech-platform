@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #16130f;
+
+  /* Orange/black/white brand scale. Deliberately NOT Tailwind's stock
+     orange numbering: --color-brand-600 (the shade almost every existing
+     button/CTA in this codebase already references) is calibrated to pass
+     WCAG AA (~5:1) with white text, so recoloring this scale alone makes
+     every existing bg-brand-600/hover:bg-brand-700 button accessible
+     without touching each call site. Lighter shades (300-500) are for
+     accents, borders, icons and hover-glow -- never for white button text. */
+  --color-brand-50: #fff4ed;
+  --color-brand-100: #ffe3ce;
+  --color-brand-200: #ffc69c;
+  --color-brand-300: #fda85f;
+  --color-brand-400: #f98430;
+  --color-brand-500: #e8630f;
+  --color-brand-600: #c2410c;
+  --color-brand-700: #9c3410;
+  --color-brand-800: #7a2a0e;
+  --color-brand-900: #5c210c;
+
+  /* Semantic surface/text/border tokens for the orange/black/white system
+     (Requirement 3). Public marketing sections alternate --color-surface-dark
+     and --color-surface-light/-muted deliberately for visual rhythm -- this
+     is fixed brand design, not an OS light/dark mode. */
+  --color-surface-dark: #0b0b0c;
+  --color-surface-light: #ffffff;
+  --color-surface-muted: #f6f3f0;
+  --color-text-on-dark: #f5f2ee;
+  --color-text-on-light: #16130f;
+  --color-text-muted: #6b6560;
+  --color-border-light: #e7e1da;
+  --color-border-dark: #2a2724;
+  --color-focus: var(--color-brand-400);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+  --color-surface-dark: var(--color-surface-dark);
+  --color-surface-light: var(--color-surface-light);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-text-on-dark: var(--color-text-on-dark);
+  --color-text-on-light: var(--color-text-on-light);
+  --color-text-muted: var(--color-text-muted);
+  --color-border-light: var(--color-border-light);
+  --color-border-dark: var(--color-border-dark);
+  --color-focus: var(--color-focus);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Decorative hero glow drift (Hero.tsx). Transform-only so it stays
+   GPU-composited; browsers already pause CSS animations on hidden tabs, and
+   the prefers-reduced-motion rule below collapses its duration to ~0. */
+@keyframes eutech-glow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, 3%, 0) scale(1.05);
+  }
+}
+
+/* Visible keyboard focus everywhere, including inside dark sections.
+   Kept as a plain CSS rule (not a Tailwind utility) so it applies uniformly
+   without depending on every new component remembering a focus class. */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
